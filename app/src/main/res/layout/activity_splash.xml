@@ -6,7 +6,7 @@
 
         <ImageView
             android:layout_gravity="center"
-            android:src="@drawable/LearnLanguage"
+            android:src="@drawable/learnlanguage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </FrameLayout>

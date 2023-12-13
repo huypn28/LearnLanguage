@@ -3,18 +3,18 @@
 
     <item
         android:checked="true"
-        android:title="Home"
+        android:title="Folder"
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"/>
 
     <item
         android:checked="false"
-        android:title="List"
+        android:title="Study"
         android:id="@+id/listFragment"
         android:icon="@drawable/ic_list"/>
     <item
         android:checked="false"
-        android:title="Study"
+        android:title="Public"
         android:id="@+id/studyFragment"
         android:icon="@drawable/ic_study"/>
 
