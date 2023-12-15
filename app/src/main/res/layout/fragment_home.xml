@@ -7,9 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/actionbar_main"
-            layout="@layout/actionbar_main" />
+
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -3,8 +3,9 @@ package com.example.learnlanguage.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import androidx.fragment.app.FragmentManager
-import com.example.learningenglish.dialog.InProgressBlurDialog
-import com.example.learningenglish.dialog.SimpleMessageDialog
+import com.example.learnlanguage.dialog.InProgressBlurDialog
+import com.example.learnlanguage.dialog.SimpleMessageDialog
+
 
 object ViewUtils {
     @SuppressLint("StaticFieldLeak")

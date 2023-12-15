@@ -44,6 +44,9 @@ class ProfileViewModel : BaseViewModel() {
                 }
             }
     }
+    fun logOut(){
+        auth.signOut()
+    }
 
 
 }

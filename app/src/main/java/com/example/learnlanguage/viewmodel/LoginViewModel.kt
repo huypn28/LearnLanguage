@@ -1,8 +1,8 @@
 package com.example.learnlanguage.viewmodel
 
 
-import com.example.learningenglish.firebase.FirebaseAuthenticationManager
 import com.example.learnlanguage.base.BaseViewModel
+import com.example.learnlanguage.firebase.FirebaseAuthenticationManager
 
 class LoginViewModel: BaseViewModel() {
     private val firebaseAuthManager = FirebaseAuthenticationManager

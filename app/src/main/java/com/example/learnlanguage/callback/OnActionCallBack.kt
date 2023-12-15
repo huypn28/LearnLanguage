@@ -1,6 +1,7 @@
 package com.example.learnlanguage.callback
 
-import com.example.learningenglish.share.FragmentTransactionAnim
+import com.example.learnlanguage.share.FragmentTransactionAnim
+
 
 interface OnActionCallBack {
     fun showFrg(backTag : String, tag : String, isBacked : Boolean)

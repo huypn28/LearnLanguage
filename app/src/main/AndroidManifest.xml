@@ -22,6 +22,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.AddFolderActivity"/>
+        <activity android:name=".activity.FolderDetailActivity"/>
+        <activity android:name=".activity.WordTopicActivity"/>
+        <activity android:name=".activity.AddTopicActivity"/>
+        <activity android:name=".activity.AddTopicEnterWordActivity"/>
+        <activity android:name=".activity.AddTopicImportCSVActivity"/>
+        <activity android:name=".activity.AddWordTopicActivity"/>
+        <activity android:name=".activity.EditProfileActivity"/>
+
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

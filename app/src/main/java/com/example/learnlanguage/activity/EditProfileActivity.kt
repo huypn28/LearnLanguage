@@ -1,4 +1,4 @@
-package com.example.learnlanguage.fragment
+package com.example.learnlanguage.activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,7 +11,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.learnlanguage.R
-import com.example.learnlanguage.base.BaseFragment
+import com.example.learnlanguage.base.BaseActivity
 import com.example.learnlanguage.databinding.FragmentEditprofileBinding
 import com.example.learnlanguage.model.User
 import com.example.learnlanguage.utils.Resource
@@ -19,10 +19,9 @@ import com.example.learnlanguage.viewmodel.EditProfileViewModel
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
-class EditProfileFragment: BaseFragment<FragmentEditprofileBinding>() {
+class EditProfileActivity : BaseActivity<FragmentEditprofileBinding, EditProfileViewModel>() {
     companion object {
-        internal val TAG = EditProfileFragment::class.java.name
+        internal val TAG = EditProfileActivity::class.java.name
     }
     private val viewModel: EditProfileViewModel by viewModel()
 
@@ -51,7 +50,7 @@ class EditProfileFragment: BaseFragment<FragmentEditprofileBinding>() {
                         showUserInformation(it.data!!)
                     }
                     is Resource.Error -> {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@EditProfileActivity, it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }
@@ -63,10 +62,10 @@ class EditProfileFragment: BaseFragment<FragmentEditprofileBinding>() {
                 when (it) {
 
                     is Resource.Success -> {
-                        Toast.makeText(requireContext(), "Update successfully", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@EditProfileActivity, "Update successfully", Toast.LENGTH_SHORT).show()
                     }
                     is Resource.Error -> {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@EditProfileActivity, it.message, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }
@@ -78,15 +77,13 @@ class EditProfileFragment: BaseFragment<FragmentEditprofileBinding>() {
             binding.apply {
                 val userName=edUserName.text.toString().trim()
                 val address=edAddress.text.toString().trim()
-                val birth=edBirth.text.toString().trim()
-                val user= User(userName, address, birth)
+                val phone=edPhone.text.toString().trim()
+                val user= User(userName, address, phone)
                 viewModel.updateUser(user, imageUri)
             }
         }
 
-        binding.buttonCancelEditProfile.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
+
 
         binding.ivProfile.setOnClickListener {
             val intent= Intent(Intent.ACTION_GET_CONTENT)
@@ -97,10 +94,10 @@ class EditProfileFragment: BaseFragment<FragmentEditprofileBinding>() {
 
     private fun showUserInformation(data: User) {
         binding.apply {
-            Glide.with(this@EditProfileFragment).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(ivProfile)
+            Glide.with(this@EditProfileActivity).load(data.imagePath).error(ColorDrawable(Color.BLACK)).into(ivProfile)
             edUserName.setText(data.userName)
             edAddress.setText(data.address)
-            edBirth.setText(data.birth)
+            edPhone.setText(data.phone)
 
         }
     }

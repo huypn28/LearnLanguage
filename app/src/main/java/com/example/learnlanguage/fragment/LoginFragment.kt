@@ -2,11 +2,11 @@ package com.example.learnlanguage.fragment
 
 import android.content.Intent
 import android.text.TextUtils
-import com.example.learningenglish.share.FragmentTransactionAnim
 import com.example.learnlanguage.R
 import com.example.learnlanguage.activity.MainActivity
 import com.example.learnlanguage.base.BaseFragment
 import com.example.learnlanguage.databinding.FragmentLoginBinding
+import com.example.learnlanguage.share.FragmentTransactionAnim
 import com.example.learnlanguage.utils.ViewUtils
 import com.example.learnlanguage.viewmodel.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel

@@ -4,7 +4,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/gray"
         android:gravity="center|top"
         android:orientation="vertical">
 
@@ -26,52 +25,7 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
-        <TableRow
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|top"
-                android:text="Address : "
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_marginStart="8dp"
-                android:id="@+id/ed_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|top"
-                android:text="Address"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </TableRow>
-        <TableRow
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|top"
-                android:text="Date of birth : "
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_marginStart="8dp"
-                android:id="@+id/ed_birth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start|top"
-                android:text="Date of birth"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-        </TableRow>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_editprofile"
             android:layout_height="50dp"
@@ -85,11 +39,11 @@
             android:textSize="18sp"
             />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <TextView
             android:id="@+id/button_logout"
             android:layout_height="50dp"
             android:layout_width="200dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="300dp"
             android:text="Logout"
             android:gravity="center"
             style="@style/blueButtonStyle"

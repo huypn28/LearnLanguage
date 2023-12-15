@@ -1,4 +1,4 @@
-package com.example.learningenglish.share
+package com.example.learnlanguage.share
 
 data class FragmentTransactionAnim (
     var enter: Int = 0,

@@ -59,11 +59,11 @@ class EditProfileViewModel : BaseViewModel()  {
     fun updateUser(user: User, imageUri: Uri?) {
         val areInputsvalid = user.userName.trim().isNotEmpty()
                 && user.address.trim().isNotEmpty()
-                && user.birth.trim().isNotEmpty()
+                && user.phone.trim().isNotEmpty()
 
         if (!areInputsvalid) {
             viewModelScope.launch {
-                _user.emit(Resource.Error("Kiểm tra lại thông tin"))
+                _user.emit(Resource.Error("Check your information again"))
             }
             return
         }

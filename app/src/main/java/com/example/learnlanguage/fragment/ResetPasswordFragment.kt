@@ -18,9 +18,7 @@ class ResetPasswordFragment: BaseFragment<FragmentResetpasswordBinding>() {
     override fun getVM(): ViewModel = viewModel
 
     override fun initViews() {
-        binding.buttonCancelResetMail.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
+
         binding.buttonSendResetMail.setOnClickListener {
             val email = binding.edEmailReset.text.toString()
 

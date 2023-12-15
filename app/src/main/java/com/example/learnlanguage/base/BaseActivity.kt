@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentTransaction
-import com.example.learningenglish.share.FragmentTransactionAnim
 import com.example.learnlanguage.callback.OnActionCallBack
 import com.example.learnlanguage.R
+import com.example.learnlanguage.share.FragmentTransactionAnim
 
 abstract class BaseActivity<BD: ViewDataBinding, VM: BaseViewModel>: AppCompatActivity(),
     OnActionCallBack {

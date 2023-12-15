@@ -1,133 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fillViewport="true">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/imageClose_topic"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+
+        <TableRow
             android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:src="@drawable/ic_close"
-            app:tint="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            ></ImageView>
-        <LinearLayout
-            android:id="@+id/linearLayout_addword"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginEnd="16dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:text="Topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/iv_add_topic"
+                android:padding="15dp"
+                android:src="@drawable/ic_new_folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </TableRow>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_topic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintStart_toStartOf="@id/imageClose_topic"
-            app:layout_constraintTop_toTopOf="@id/imageClose_topic"
-            >
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"/>
 
-
-
-            <TextView
-                android:id="@+id/tvProductName"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Topic"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                ></TextView>
-        </LinearLayout>
-
-
-
-
-
-        <View
-            android:id="@+id/line"
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearLayout_addword"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-
-
-            ></View>
-
-        <LinearLayout
-            android:id="@+id/linearProductPref"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@id/line"
-            app:layout_constraintEnd_toEndOf="@id/line"
-            app:layout_constraintTop_toBottomOf="@+id/line"
-            android:layout_marginTop="30dp"
-
-            >
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                >
-
-                <TextView
-                    android:id="@+id/tvProductColors"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:text="Word"
-                    ></TextView>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/rvWord"
-                    ></androidx.recyclerview.widget.RecyclerView>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                >
-
-                <TextView
-                    android:id="@+id/tvProductSizes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:text="Mean"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    ></TextView>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/rvMean"
-                    ></androidx.recyclerview.widget.RecyclerView>
-            </LinearLayout>
-
-
-
-
-        </LinearLayout>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

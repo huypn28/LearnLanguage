@@ -1,4 +1,4 @@
-package com.example.learningenglish.dialog
+package com.example.learnlanguage.dialog
 
 import android.view.View
 import com.example.learnlanguage.R

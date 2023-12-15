@@ -1,4 +1,4 @@
-package com.example.learningenglish.firebase
+package com.example.learnlanguage.firebase
 
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth

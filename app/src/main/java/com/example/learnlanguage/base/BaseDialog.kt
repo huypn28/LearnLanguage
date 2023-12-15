@@ -73,12 +73,7 @@ abstract class BaseDialog<BD: ViewDataBinding>: DialogFragment() {
         super.onDismiss(dialog)
     }
 
-    /**
-     * Tinh toan chieu rong cua window sao cho phan window duoc margin screen mot khoang
-     * bang margin (dp)
-     * @param margin: do lon can margin (dp)
-     * @return chieu rong (px)
-     */
+
     protected fun calculateWindowDialogWidth(margin: Float): Int {
         val displayMetrics = DisplayMetrics()
         activity?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)

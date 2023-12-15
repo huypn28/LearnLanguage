@@ -22,7 +22,7 @@ abstract class BaseFragment<K : ViewDataBinding> : Fragment() {
     protected abstract fun getVM(): ViewModel
 
     companion object {
-        const val SYS_ERROR: String = "Có lỗi xảy ra!"
+        const val SYS_ERROR: String = "An error occurred!"
     }
 
     override fun onCreateView(
