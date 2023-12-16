@@ -35,11 +35,11 @@ class WordAdapter(
             val learState = word.learState
 
             if (learState == 0) {
-                binding.tvState.text = "Chưa học"
+                binding.tvState.text = "Not learned"
             } else if (learState in 1..4) {
-                binding.tvState.text = "Đã học"
+                binding.tvState.text = "Learned"
             } else {
-                binding.tvState.text = "Đã thuộc"
+                binding.tvState.text = "Memorized"
             }
             binding.lnItemWord.setOnClickListener {
                 onItemClick.invoke(word)

@@ -209,4 +209,12 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
         return sqLiteDatabase.delete("word", whereClause, whereArgs)
     }
 
+    fun deleteSingleWord(id: Int): Int {
+        val sqLiteDatabase = writableDatabase
+        val whereClause = "word_id = ?"
+        val whereArgs = arrayOf(Integer.toString(id))
+        return sqLiteDatabase.delete("word", whereClause, whereArgs)
+    }
+
+
 }

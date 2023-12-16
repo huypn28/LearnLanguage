@@ -8,6 +8,7 @@ import com.example.learnlanguage.base.BaseActivity
 import com.example.learnlanguage.database.AppDatabase
 import com.example.learnlanguage.databinding.ActivityTopicDetailsBinding
 import com.example.learnlanguage.model.Topic
+import com.example.learnlanguage.share.ItemDecoration
 import com.example.learnlanguage.viewmodel.MainViewModel
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,6 +36,8 @@ class WordTopicActivity: BaseActivity<ActivityTopicDetailsBinding, MainViewModel
         }
         binding.rcvTopic.adapter = topicWordAdapter
         binding.rcvTopic.layoutManager = LinearLayoutManager(this)
+        val spaceHeightInPixels = resources.getDimensionPixelSize(R.dimen.space_between_items)
+        binding.rcvTopic.addItemDecoration(ItemDecoration(spaceHeightInPixels))
         binding.ivAddWordTopic.setOnClickListener {
             val intent = Intent(this@WordTopicActivity, AddWordTopicActivity::class.java)
             intent.putExtra(TOPIC_ID,topicWordId)
