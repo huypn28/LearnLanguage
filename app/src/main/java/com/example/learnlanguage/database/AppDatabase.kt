@@ -44,6 +44,8 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     companion object {
+
+
         private val DATABASE_NAME = "learnLanguage"
         private val DATABASE_VERSION = 1
     }
@@ -161,17 +163,7 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
         }
         return list
     }
-    fun searchTotalByWordTopic(key: Int): Int {
-        var topicWordCount = 0 // Biến đếm số từ của chủ đề
-        val whereClause = "topic_id = ?"
-        val whereArgs = arrayOf("%$key%")
-        val st = readableDatabase
-        val rs = st.query("word", null, whereClause, whereArgs, null, null, null)
-        while (rs != null && rs.moveToNext()) {
-            topicWordCount++
-        }
-        return topicWordCount
-    }
+
     fun searchByNameFolder(key: String): List<Folder> {
         val list = arrayListOf<Folder>()
         val whereClause = "folder_name like ?"

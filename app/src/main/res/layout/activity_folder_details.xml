@@ -18,7 +18,7 @@
         <TextView
             android:id="@+id/name_folder_details"
             android:layout_marginTop="12dp"
-            android:text="List Topic"
+            android:text="List topic in folder"
             android:layout_marginBottom="12dp"
             android:textStyle="bold"
             android:textColor="@color/white"
