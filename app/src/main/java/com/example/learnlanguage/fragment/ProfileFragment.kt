@@ -8,6 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.learnlanguage.R
 import com.example.learnlanguage.activity.EditProfileActivity
+import com.example.learnlanguage.activity.LoginActivity
 import com.example.learnlanguage.base.BaseFragment
 import com.example.learnlanguage.databinding.FragmentProfileBinding
 import com.example.learnlanguage.share.FragmentTransactionAnim
@@ -28,8 +29,8 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
     override fun initViews() {
 
         binding.buttonLogout.setOnClickListener {
-            viewModel.logOut()
-            val intent=Intent(requireActivity(),LoginFragment::class.java)
+
+            val intent=Intent(requireActivity(),LoginActivity::class.java)
             startActivity(intent)
             requireActivity().finish()
         }
