@@ -11,6 +11,7 @@ import com.example.learnlanguage.adapter.FolderAdapter
 import com.example.learnlanguage.base.BaseFragment
 import com.example.learnlanguage.database.AppDatabase
 import com.example.learnlanguage.databinding.FragmentFolderBinding
+import com.example.learnlanguage.share.ItemDecoration
 import com.example.learnlanguage.viewmodel.MainViewModel
 
 import org.koin.android.ext.android.inject
@@ -33,6 +34,8 @@ class FolderFragment : BaseFragment<FragmentFolderBinding>() {
         })
         binding.rcvFolder.adapter = folderAdapter
         binding.rcvFolder.layoutManager = LinearLayoutManager(requireContext())
+        val spaceHeightInPixels = resources.getDimensionPixelSize(R.dimen.space_between_items)
+        binding.rcvFolder.addItemDecoration(ItemDecoration(spaceHeightInPixels))
         binding.ivAddSub.setOnClickListener {
             openAddFolderAct()
         }

@@ -44,7 +44,9 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
     }
 
     companion object {
-        private val DATABASE_NAME = "learningEnglish"
+
+
+        private val DATABASE_NAME = "learnLanguage"
         private val DATABASE_VERSION = 1
     }
 
@@ -161,6 +163,7 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
         }
         return list
     }
+
     fun searchByNameFolder(key: String): List<Folder> {
         val list = arrayListOf<Folder>()
         val whereClause = "folder_name like ?"
@@ -208,5 +211,13 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
         val whereArgs = arrayOf(Integer.toString(id))
         return sqLiteDatabase.delete("word", whereClause, whereArgs)
     }
+
+    fun deleteSingleWord(id: Int): Int {
+        val sqLiteDatabase = writableDatabase
+        val whereClause = "word_id = ?"
+        val whereArgs = arrayOf(Integer.toString(id))
+        return sqLiteDatabase.delete("word", whereClause, whereArgs)
+    }
+
 
 }

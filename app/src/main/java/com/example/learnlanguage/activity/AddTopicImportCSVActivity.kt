@@ -48,6 +48,7 @@ class AddTopicImportCSVActivity: BaseActivity<ActivityAddTopicImportBinding, Mai
             // Neu pre list khong rong tuc la dang import thi save cac tu dang import vao topic nay
             for (word in viewModel.prevListWords) {
                 sqlHelper.addWord(word, topicId.toInt())
+
             }
             // Topic la public thi day len firebase
             if (topic.mode == 1) {
@@ -108,6 +109,7 @@ class AddTopicImportCSVActivity: BaseActivity<ActivityAddTopicImportBinding, Mai
                         val columns = line!!.split(",")
                         val word = Word(columns.get(0), columns.get(1), 0)
                         viewModel.prevListWords.add(word)
+
                         Log.d(TAG, "onActivityResult: $word")
                     }
 

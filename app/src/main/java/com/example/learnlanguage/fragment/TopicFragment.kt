@@ -13,6 +13,7 @@ import com.example.learnlanguage.adapter.TopicAdapter
 import com.example.learnlanguage.base.BaseFragment
 import com.example.learnlanguage.database.AppDatabase
 import com.example.learnlanguage.databinding.FragmentTopicBinding
+import com.example.learnlanguage.share.ItemDecoration
 import org.koin.android.ext.android.inject
 
 class TopicFragment : BaseFragment<FragmentTopicBinding>() {
@@ -37,6 +38,8 @@ class TopicFragment : BaseFragment<FragmentTopicBinding>() {
             })
             binding.rcvTopic.adapter = topicAdapter
             binding.rcvTopic.layoutManager = LinearLayoutManager(activity)
+            val spaceHeightInPixels = resources.getDimensionPixelSize(R.dimen.space_between_items)
+            binding.rcvTopic.addItemDecoration(ItemDecoration(spaceHeightInPixels))
         }
         binding.ivAddTopic.setOnClickListener {
             val intent = Intent(activity, AddTopicActivity::class.java)

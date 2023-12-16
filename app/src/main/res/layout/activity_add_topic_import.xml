@@ -114,7 +114,7 @@
 
             <TextView
                 android:id="@+id/tv_import"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="12dp"
                 android:layout_marginTop="12dp"
@@ -126,6 +126,20 @@
                 android:text="Import CSV"
                 android:textColor="@color/white"
                 android:textSize="18dp" />
+            <TextView
+                android:id="@+id/tv_confirm_import"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_weight="1"
+                style="@style/blueButtonStyle"
+                android:gravity="center"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="4dp"
+                android:text="Confirm"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
         </TableRow>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -134,24 +148,6 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
             android:layout_marginVertical="12dp" />
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
-        <TextView
-            android:id="@+id/tv_confirm_import"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="12dp"
-            android:layout_marginTop="12dp"
-            android:layout_weight="1"
-            style="@style/blueButtonStyle"
-            android:gravity="center"
-            android:paddingHorizontal="20dp"
-            android:paddingVertical="4dp"
-            android:text="Confirm"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
-        </TableRow>
+
     </LinearLayout>
 </layout>
