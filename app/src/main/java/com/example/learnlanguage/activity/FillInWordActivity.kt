@@ -28,13 +28,13 @@ class FillInWordActivity : BaseActivity<ActivityFillWordBinding, MainViewModel>(
         binding.tvOk.setOnClickListener {
             if (listWord[index].meaning == binding.tvWordMean.text.toString()) {
                 var stateWord = 0
-                if (listWord[index].learState < 3) {
+                if (listWord[index].learState < 100) {
                     stateWord = ++listWord[index].learState
                 }
                 sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
-                Toast.makeText(this@FillInWordActivity, "Chính xác", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@FillInWordActivity, "Correct", Toast.LENGTH_SHORT).show()
             }
-            else Toast.makeText(this@FillInWordActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
+            else Toast.makeText(this@FillInWordActivity, "Incorrect", Toast.LENGTH_SHORT).show()
             index++
             reloadData()
         }
@@ -42,7 +42,7 @@ class FillInWordActivity : BaseActivity<ActivityFillWordBinding, MainViewModel>(
 
     private fun reloadData() {
         if (index >= listWord.size) {
-            Toast.makeText(this@FillInWordActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@FillInWordActivity,"Out of words", Toast.LENGTH_SHORT).show()
             finish()
         }
         else binding.tvWord.text = listWord[index].name

@@ -44,13 +44,13 @@ class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>(
         binding.tvOk.setOnClickListener {
             if (trueText == selectedText) {
                 var stateWord = 0
-                if (listWord[index].learState < 3) {
+                if (listWord[index].learState < 100) {
                     stateWord = ++listWord[index].learState
                 }
                 sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
-                Toast.makeText(this@FlashCardActivity, "Chính xác", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@FlashCardActivity, "Correct", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this@FlashCardActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@FlashCardActivity, "Incorrect", Toast.LENGTH_SHORT).show()
             }
             index++
             reloadData()
@@ -58,7 +58,7 @@ class FlashCardActivity : BaseActivity<ActivityFlashCardBinding, MainViewModel>(
     }
     private fun reloadData() {
         if (index >= listWord.size) {
-            Toast.makeText(this@FlashCardActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@FlashCardActivity,"Out of words", Toast.LENGTH_SHORT).show()
             finish()
         } else {
             binding.tvWord.text = listWord[index].name

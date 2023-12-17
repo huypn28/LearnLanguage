@@ -60,19 +60,19 @@ class MultipleChoiceActivity : BaseActivity<ActivityMultipleChoiceBinding, MainV
     private fun checkIsSuccessAns(ansString : String) {
         var stateWord = 0
         if (listWord[index].meaning == ansString){
-            if (listWord[index].learState < 3) {
+            if (listWord[index].learState < 100) {
                 stateWord = ++listWord[index].learState
             }
             sqlHelper.updateWord(Word(listWord[index].id,listWord[index].name,listWord[index].meaning, stateWord))
-            Toast.makeText(this@MultipleChoiceActivity, "Chính xác", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MultipleChoiceActivity, "Correct", Toast.LENGTH_SHORT).show()
         } else {
-            Toast.makeText(this@MultipleChoiceActivity, "Chưa chính xác", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MultipleChoiceActivity, "Incorrect", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun reloadData() {
         if (index >= listWord.size) {
-            Toast.makeText(this@MultipleChoiceActivity,"Đã hết từ vựng", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MultipleChoiceActivity,"Out of words", Toast.LENGTH_SHORT).show()
             finish()
         } else {
             binding.tvWord.text = listWord[index].name
