@@ -37,7 +37,41 @@ class AppDatabase(context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, 
                     "state INTEGER," +
                     "topic_id INTEGER," +
                     "FOREIGN KEY (topic_id) REFERENCES topic(topic_id))")
+        db.execSQL(
+            "INSERT INTO folder (folder_name) VALUES " +
+                    "('Folder 1')," +
+                    "('Folder 2')," +
+                    "('Folder 3');"
+        );
+
+        db.execSQL(
+            "INSERT INTO topic (topic_name, total, mode, folder_id) VALUES " +
+                    "('Lời chào', 2, 0, 1)," +
+                    "('Phương tiện', 2, 0, 1)," +
+                    "('Dụng cụ học tập', 2, 0, 2)," +
+                    "('Thời trang', 2, 0, 2)," +
+                    "('Hoa quả', 2, 0, 3);"
+        );
+
+        db.execSQL(
+            "INSERT INTO word (word_name, meaning, state, topic_id) VALUES " +
+                    "('hello', 'xin chào', 0, 1)," +
+                    "('bye', 'tạm biệt', 0, 1)," +
+                    "('car', 'ô tô', 0, 2)," +
+                    "('bicycle', 'xe đạp', 0, 2)," +
+                    "('pencil', 'bút chì', 0, 3)," +
+                    "('notebook', 'sổ tay', 0, 3)," +
+                    "('dress', 'váy', 0, 4)," +
+                    "('shirt', 'áo sơ mi', 0, 4)," +
+                    "('apple', 'táo', 0, 5)," +
+                    "('banana', 'chuối', 0, 5);"
+        );
+
+
+
     }
+
+
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
 
