@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:orientation="vertical"
-        android:background="@color/gray"
+        android:background="@drawable/background"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:text="Edit profile"
+            android:textColor="@color/white"
             android:textSize="30sp"
             style="@style/h4" />
 
@@ -39,8 +40,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:text="UserName : "
-                android:textColor="@color/black"
+                android:text="Username : "
+                android:textColor="@color/white"
                 android:textSize="16sp" />
             <EditText
                 android:id="@+id/ed_user_name"
@@ -48,8 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
-                android:hint="UserName"
-                android:textColor="@color/black"
+                android:hint="Username"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </TableRow>
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:text="Address : "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
             <EditText
                 android:id="@+id/ed_address"
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:hint="Address"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </TableRow>
@@ -90,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:text="Phone : "
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
             <EditText
                 android:id="@+id/ed_phone"
@@ -99,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:hint="Phone"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
         </TableRow>
